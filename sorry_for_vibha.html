@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Vibha 💗</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:linear-gradient(135deg,#ffe3ed,#f3e6ff,#e4f3ff);
+  overflow:hidden;color:#4d3040
+}
+.card{
+  width:min(90%,440px);padding:38px 27px;text-align:center;
+  background:#ffffffdc;backdrop-filter:blur(12px);border-radius:30px;
+  box-shadow:0 20px 60px #714c702b;z-index:2;
+  animation:pop .6s ease
+}
+@keyframes pop{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+.heart{font-size:58px}
+h1{font-size:32px;margin:10px 0 16px}
+p{font-size:17px;line-height:1.7}
+button{
+  border:0;border-radius:30px;padding:14px 27px;font-size:17px;
+  font-weight:700;background:#ff7198;color:white;
+  box-shadow:0 8px 20px #ff71984d;cursor:pointer
+}
+.message{display:none}
+.from{font-size:14px;opacity:.7;margin-top:20px}
+.float{position:fixed;bottom:-30px;font-size:25px;animation:up 7s linear infinite;opacity:.65}
+@keyframes up{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+</style>
+</head>
+<body>
+
+<div class="float" style="left:8%">💗</div>
+<div class="float" style="left:25%;animation-delay:2s">💕</div>
+<div class="float" style="left:50%;animation-delay:4s">🌷</div>
+<div class="float" style="left:72%;animation-delay:1s">💞</div>
+<div class="float" style="left:90%;animation-delay:3s">💖</div>
+
+<div class="card" id="cover">
+  <div class="heart">💌</div>
+  <h1>A Message For Vibha</h1>
+  <p>There’s a little something I wanted to say to you… 🥺💗</p>
+  <button onclick="openMessage()">Tap to open 💗</button>
+</div>
+
+<div class="card message" id="message">
+  <div class="heart">🥺💗</div>
+  <h1>Vibhaaa, I'm Sorryyy 😭</h1>
+
+  <p>
+    I am sorryyy yawrrrrrrrrr 🥹 buttttt aaj kallll bohottt zyaadaaa hiii
+    irritate krrneee lagii huuu, ikkk 😭 buttt sorryyyy.
+  </p>
+
+  <p>
+    Aurrr haaa, mujhee pataa haiii kii hum relationship maii nhiii haiii,
+    we areee friends, but this is for you as a frienddd. 💗
+  </p>
+
+  <p>
+    I just wanted to say sorry because you genuinely matter to me,
+    and I don't want my stupid irritating behaviour to create more
+    misunderstandings between us. 🫂
+  </p>
+
+  <p><b>So yeahhh… I'm genuinely sorryyy Vibhaaa 😭💗</b></p>
+
+  <p class="from">— From Laher 🫶🏻</p>
+</div>
+
+<script>
+function openMessage(){
+  document.getElementById("cover").style.display="none";
+  document.getElementById("message").style.display="block";
+}
+</script>
+
+</body>
+</html>
