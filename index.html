@@ -1,87 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta property="og:title" content="💌 A Little Message For Vibha">
-<meta property="og:description" content="Vibhaaa, you have a little surprise waiting for you 🥺💗 Tap to open it!">
-<meta name="description" content="A little surprise message for Vibha 💌">
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Vibha 💗</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>For my baby 💗</title>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@400;500;600&display=swap');
+
 *{box-sizing:border-box}
-body{
-  margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  background:linear-gradient(135deg,#ffe3ed,#f3e6ff,#e4f3ff);
-  overflow:hidden;color:#4d3040
+html,body{margin:0;min-height:100%;font-family:Poppins,system-ui,sans-serif;background:#160b16;color:#fff;overflow:hidden}
+body{background:
+ radial-gradient(circle at 20% 20%,rgba(255,150,205,.16),transparent 30%),
+ radial-gradient(circle at 80% 80%,rgba(255,80,150,.12),transparent 32%),
+ linear-gradient(135deg,#160b16,#2b1026 55%,#130812)}
+.screen{position:fixed;inset:0;display:none;align-items:center;justify-content:center;padding:24px;opacity:0;transition:opacity .55s ease}
+.screen.active{display:flex;opacity:1}
+.glow{position:absolute;width:280px;height:280px;border-radius:50%;background:rgba(255,110,180,.12);filter:blur(45px);pointer-events:none}
+.card{position:relative;width:min(92vw,560px);border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.075);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-radius:30px;box-shadow:0 25px 80px rgba(0,0,0,.45);padding:34px}
+.open-card{text-align:center;padding:52px 28px}
+.kicker{font-size:13px;letter-spacing:4px;text-transform:uppercase;opacity:.7;margin-bottom:12px}
+h1,h2{font-family:"DM Serif Display",serif;font-weight:400}
+h1{font-size:clamp(48px,13vw,82px);line-height:.95;margin:0 0 22px}
+h2{font-size:clamp(34px,9vw,52px);margin:0 0 20px}
+.sub{opacity:.78;font-size:14px}
+button{border:0;cursor:pointer;font-family:inherit;font-weight:600}
+.primary{margin-top:28px;padding:14px 28px;border-radius:999px;background:#fff;color:#321329;font-size:15px;box-shadow:0 10px 30px rgba(255,255,255,.12);transition:transform .2s,box-shadow .2s}
+.primary:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(255,255,255,.2)}
+.heart{font-size:42px;animation:float 2.8s ease-in-out infinite;display:inline-block;margin-bottom:8px}
+@keyframes float{50%{transform:translateY(-8px) rotate(3deg)}}
+.letter{font-size:16px;line-height:1.9;color:#fff}
+.letter strong{font-weight:600}
+.signature{margin-top:18px;font-family:"DM Serif Display",serif;font-size:24px}
+.media-card{width:min(92vw,540px);height:min(84vh,760px);padding:14px;display:flex;flex-direction:column}
+.media-wrap{position:relative;flex:1;min-height:0;border-radius:22px;overflow:hidden;background:#0c080c}
+.media-wrap img,.media-wrap video{width:100%;height:100%;object-fit:contain;display:block}
+.media-wrap img{background:#0c080c}
+.decor{position:absolute;inset:0;pointer-events:none;font-size:22px}
+.decor span{position:absolute;filter:drop-shadow(0 2px 6px rgba(0,0,0,.5))}
+.d1{top:12px;left:14px}.d2{top:10px;right:15px}.d3{bottom:14px;left:16px}.d4{bottom:12px;right:15px}
+.media-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 2px 0}
+.progress{font-size:12px;opacity:.65}
+.next{padding:11px 18px;border-radius:999px;background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.18)}
+.end{text-align:center}
+.end .big{font-size:52px;margin-bottom:10px}
+.end p{line-height:1.8;opacity:.82}
+.spark{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+.spark i{position:absolute;width:5px;height:5px;background:#fff;border-radius:50%;opacity:.65;animation:rise 5s linear infinite}
+@keyframes rise{from{transform:translateY(110vh) scale(.5);opacity:0}20%{opacity:.7}to{transform:translateY(-10vh) scale(1);opacity:0}}
+@media(max-width:500px){
+ .card{padding:28px 22px;border-radius:26px}
+ .letter{font-size:14.5px;line-height:1.8}
+ .media-card{height:80vh;padding:10px}
+ .media-footer{padding-top:9px}
 }
-.card{
-  width:min(90%,440px);padding:38px 27px;text-align:center;
-  background:#ffffffdc;backdrop-filter:blur(12px);border-radius:30px;
-  box-shadow:0 20px 60px #714c702b;z-index:2;
-  animation:pop .6s ease
-}
-@keyframes pop{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
-.heart{font-size:58px}
-h1{font-size:32px;margin:10px 0 16px}
-p{font-size:17px;line-height:1.7}
-button{
-  border:0;border-radius:30px;padding:14px 27px;font-size:17px;
-  font-weight:700;background:#ff7198;color:white;
-  box-shadow:0 8px 20px #ff71984d;cursor:pointer
-}
-.message{display:none}
-.from{font-size:14px;opacity:.7;margin-top:20px}
-.float{position:fixed;bottom:-30px;font-size:25px;animation:up 7s linear infinite;opacity:.65}
-@keyframes up{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
 </style>
 </head>
 <body>
+<div class="spark" id="spark"></div>
 
-<div class="float" style="left:8%">💗</div>
-<div class="float" style="left:25%;animation-delay:2s">💕</div>
-<div class="float" style="left:50%;animation-delay:4s">🌷</div>
-<div class="float" style="left:72%;animation-delay:1s">💞</div>
-<div class="float" style="left:90%;animation-delay:3s">💖</div>
+<section class="screen active" id="s0">
+  <div class="glow"></div>
+  <div class="card open-card">
+    <div class="heart">💗</div>
+    <div class="kicker">a little something for you</div>
+    <h1>For my baby</h1>
+    <div class="sub">made with way too much love 🥹</div>
+    <button class="primary" onclick="show(1)">OPEN 💌</button>
+  </div>
+</section>
 
-<div class="card" id="cover">
-  <div class="heart">💌</div>
-  <h1>A Message For Vibha</h1>
-  <p>There’s a little something I wanted to say to you… 🥺💗</p>
-  <button onclick="openMessage()">Tap to open 💗</button>
-</div>
+<section class="screen" id="s1">
+  <div class="glow"></div>
+  <div class="card">
+    <div class="kicker">a letter for you</div>
+    <h2>Happy Birthday, babyyyy! 🎀</h2>
+    <div class="letter">
+      Happy birthday babyyyy!!!! I wish this year will be the bestest year for year no nazar 🧿 ok.
+      ILYSMMM babyyy and idk i just want to be with you aur tu mereliye bohottttt special haiii!.
+    </div>
+    <div class="signature">Lots of love~laherzz 💗</div>
+    <button class="primary" onclick="show(2)">CONTINUE →</button>
+  </div>
+</section>
 
-<div class="card message" id="message">
-  <div class="heart">🥺💗</div>
-  <h1>Vibhaaa, I'm Sorryyy 😭</h1>
+<section class="screen" id="s2">
+  <div class="card media-card">
+    <div class="media-wrap">
+      <img src="assets/photo1.jpeg" alt="A memory">
+      <div class="decor"><span class="d1">🎀</span><span class="d2">✨</span><span class="d3">🫶🏻</span><span class="d4">💗</span></div>
+    </div>
+    <div class="media-footer"><span class="progress">memory 1 / 5 🥹</span><button class="next" onclick="show(3)">NEXT →</button></div>
+  </div>
+</section>
 
-  <p>
-    I am sorryyy yawrrrrrrrrr 🥹 buttttt aaj kallll bohottt zyaadaaa hiii
-    irritate krrneee lagii huuu, ikkk 😭 buttt sorryyyy.
-  </p>
+<section class="screen" id="s3">
+  <div class="card media-card">
+    <div class="media-wrap">
+      <img src="assets/photo2.jpeg" alt="A memory">
+      <div class="decor"><span class="d1">💞</span><span class="d2">🦋</span><span class="d3">✨</span><span class="d4">🎀</span></div>
+    </div>
+    <div class="media-footer"><span class="progress">memory 2 / 5 💗</span><button class="next" onclick="show(4)">NEXT →</button></div>
+  </div>
+</section>
 
-  <p>
-    Aurrr haaa, mujhee pataa haiii kii hum relationship maii nhiii haiii,
-    we areee friends, but this is for you as a frienddd. 💗
-  </p>
+<section class="screen" id="s4">
+  <div class="card media-card">
+    <div class="media-wrap">
+      <img src="assets/photo3.jpeg" alt="A memory">
+      <div class="decor"><span class="d1">🫶🏻</span><span class="d2">💗</span><span class="d3">🌷</span><span class="d4">✨</span></div>
+    </div>
+    <div class="media-footer"><span class="progress">memory 3 / 5 🥹</span><button class="next" onclick="show(5)">NEXT →</button></div>
+  </div>
+</section>
 
-  <p>
-    I just wanted to say sorry because you genuinely matter to me,
-    and I don't want my stupid irritating behaviour to create more
-    misunderstandings between us. 🫂
-  </p>
+<section class="screen" id="s5">
+  <div class="card media-card">
+    <div class="media-wrap">
+      <video controls playsinline preload="metadata">
+        <source src="assets/video1.mp4" type="video/mp4">
+      </video>
+      <div class="decor"><span class="d1">🎥</span><span class="d2">💗</span><span class="d3">✨</span><span class="d4">🫶🏻</span></div>
+    </div>
+    <div class="media-footer"><span class="progress">memory 4 / 5 🎀</span><button class="next" onclick="show(6)">NEXT →</button></div>
+  </div>
+</section>
 
-  <p><b>So yeahhh… I'm genuinely sorryyy Vibhaaa 😭💗</b></p>
+<section class="screen" id="s6">
+  <div class="card media-card">
+    <div class="media-wrap">
+      <video controls playsinline preload="metadata">
+        <source src="assets/video2.mp4" type="video/mp4">
+      </video>
+      <div class="decor"><span class="d1">💞</span><span class="d2">✨</span><span class="d3">🎀</span><span class="d4">💗</span></div>
+    </div>
+    <div class="media-footer"><span class="progress">memory 5 / 5 🥹</span><button class="next" onclick="show(7)">THE END →</button></div>
+  </div>
+</section>
 
-  <p class="from">— From Laher 🫶🏻</p>
-</div>
+<section class="screen" id="s7">
+  <div class="glow"></div>
+  <div class="card end">
+    <div class="big">🥹💗</div>
+    <h2>Happy Birthday,<br>my baby!</h2>
+    <p>Here’s to more stupid moments, more memories, more laughs, and more us. 🫶🏻✨</p>
+    <div style="font-size:28px;margin-top:20px">🎀 💞 🧿 💗 ✨</div>
+  </div>
+</section>
 
 <script>
-function openMessage(){
-  document.getElementById("cover").style.display="none";
-  document.getElementById("message").style.display="block";
+function show(n){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  const el=document.getElementById('s'+n);
+  el.classList.add('active');
+  window.scrollTo(0,0);
+}
+const spark=document.getElementById('spark');
+for(let i=0;i<28;i++){
+  const x=document.createElement('i');
+  x.style.left=Math.random()*100+'%';
+  x.style.animationDelay=(Math.random()*5)+'s';
+  x.style.animationDuration=(3.5+Math.random()*4)+'s';
+  spark.appendChild(x);
 }
 </script>
-
 </body>
 </html>
